@@ -13,11 +13,11 @@
     <link href="assets/css/bootstrap.css" rel="stylesheet">
     <!--external css-->
     <link href="assets/font-awesome/css/font-awesome.css" rel="stylesheet" />
-	<link rel="stylesheet" href="http://cdn.oesmith.co.uk/morris-0.4.3.min.css">    
         
     <!-- Custom styles for this template -->
     <link href="assets/css/style.css" rel="stylesheet">
     <link href="assets/css/style-responsive.css" rel="stylesheet">
+    <link rel="stylesheet" href="assets/css/custom.css">
 
     <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!--[if lt IE 9]>
@@ -197,11 +197,11 @@
               <!-- sidebar menu start-->
               <ul class="sidebar-menu" id="nav-accordion">
               
-              	  <p class="centered"><a href="profile.html"><img src="assets/img/ui-sam.jpg" class="img-circle" width="60"></a></p>
-              	  <h5 class="centered">Marcel Newman</h5>
-              	  	
+                  <p class="centered"><a href="profile.html"><img src="assets/img/ui-sam.jpg" class="img-circle" width="60"></a></p>
+                  <h5 class="centered">Administrator</h5>
+                    
                   <li class="mt">
-                      <a href="index.html">
+                      <a class="active" href="index.html">
                           <i class="fa fa-dashboard"></i>
                           <span>Dashboard</span>
                       </a>
@@ -209,65 +209,42 @@
 
                   <li class="sub-menu">
                       <a href="javascript:;" >
-                          <i class="fa fa-desktop"></i>
-                          <span>UI Elements</span>
-                      </a>
-                      <ul class="sub">
-                          <li><a  href="general.html">General</a></li>
-                          <li><a  href="buttons.html">Buttons</a></li>
-                          <li><a  href="panels.html">Panels</a></li>
-                      </ul>
-                  </li>
-
-                  <li class="sub-menu">
-                      <a href="javascript:;" >
-                          <i class="fa fa-cogs"></i>
-                          <span>Components</span>
-                      </a>
-                      <ul class="sub">
-                          <li><a  href="calendar.html">Calendar</a></li>
-                          <li><a  href="gallery.html">Gallery</a></li>
-                          <li><a  href="todo_list.html">Todo List</a></li>
-                      </ul>
-                  </li>
-                  <li class="sub-menu">
-                      <a href="javascript:;" >
                           <i class="fa fa-book"></i>
-                          <span>Extra Pages</span>
+                          <span>Buku</span>
                       </a>
                       <ul class="sub">
-                          <li><a  href="blank.html">Blank Page</a></li>
-                          <li><a  href="login.html">Login</a></li>
-                          <li><a  href="lock_screen.html">Lock Screen</a></li>
+                          <li><a  href="tambah_buku.html">Tambah Buku</a></li>
+                          <li><a  href="katalog_buku.html">Katalog Buku</a></li>
                       </ul>
                   </li>
                   <li class="sub-menu">
                       <a href="javascript:;" >
-                          <i class="fa fa-tasks"></i>
-                          <span>Forms</span>
+                          <i class="fa fa-user"></i>
+                          <span>Keanggotaan</span>
                       </a>
                       <ul class="sub">
-                          <li><a  href="form_component.html">Form Components</a></li>
+                          <li><a  href="tambah_anggota.html">Tambah Anggota</a></li>
+                          <li><a  href="daftar_anggota.html">Daftar Anggota</a></li>
                       </ul>
                   </li>
                   <li class="sub-menu">
                       <a href="javascript:;" >
-                          <i class="fa fa-th"></i>
-                          <span>Data Tables</span>
+                          <i class="fa fa-list-alt"></i>
+                          <span>Peminjaman</span>
                       </a>
                       <ul class="sub">
-                          <li><a  href="basic_table.html">Basic Table</a></li>
-                          <li><a  href="responsive_table.html">Responsive Table</a></li>
+                          <li><a  href="formulir_peminjaman.html">Formulir Peminjaman</a></li>
+                          <li><a  href="daftar_peminjaman.html">Daftar Peminjaman</a></li>
                       </ul>
                   </li>
                   <li class="sub-menu">
-                      <a class="active" href="javascript:;" >
-                          <i class=" fa fa-bar-chart-o"></i>
-                          <span>Charts</span>
+                      <a href="javascript:;" >
+                          <i class="fa fa-calendar"></i>
+                          <span>Aktivitas</span>
                       </a>
                       <ul class="sub">
-                          <li class="active"><a  href="morris.html">Morris</a></li>
-                          <li><a  href="chartjs.html">Chartjs</a></li>
+                          <li><a  href="sejarah_aktivitas.html">Sejarah Aktivitas</a></li>
+                          <li><a  href="kalendar.html">Kalendar</a></li>
                       </ul>
                   </li>
 
@@ -283,48 +260,14 @@
       <!--main content start-->
       <section id="main-content">
           <section class="wrapper site-min-height">
-          <h3><i class="fa fa-angle-right"></i> Morris Charts</h3>
-              <!-- page start-->
-              <div id="morris">
-                  <div class="row mt">
-                      <div class="col-lg-6">
-                          <div class="content-panel">
-                              <h4><i class="fa fa-angle-right"></i> Chart Example 1</h4>
-                              <div class="panel-body">
-                                  <div id="hero-graph" class="graph"></div>
-                              </div>
-                          </div>
-                      </div>
-                      <div class="col-lg-6">
-                          <div class="content-panel">
-                              <h4><i class="fa fa-angle-right"></i> Chart Example 2</h4>
-                              <div class="panel-body">
-                                  <div id="hero-bar" class="graph"></div>
-                              </div>
-                          </div>
-                      </div>
-                  </div>
-                  <div class="row mt">
-                      <div class="col-lg-6">
-                          <div class="content-panel">
-                              <h4><i class="fa fa-angle-right"></i> Chart Example 3</h4>
-                              <div class="panel-body">
-                                  <div id="hero-area" class="graph"></div>
-                              </div>
-                          </div>
-                      </div>
-                      <div class="col-lg-6">
-                          <div class="content-panel">
-                              <h4><i class="fa fa-angle-right"></i> Chart Example 4</h4>
-                              <div class="panel-body">
-                                  <div id="hero-donut" class="graph"></div>
-                              </div>
-                          </div>
-                      </div>
-                  </div>
-              </div>
-              <!-- page end-->
-          </section>
+          	<h3><i class="fa fa-angle-right"></i> Blank Page</h3>
+          	<div class="row mt">
+          		<div class="col-lg-12">
+          		<p>Place your content here.</p>
+          		</div>
+          	</div>
+			
+		</section><! --/wrapper -->
       </section><!-- /MAIN CONTENT -->
 
       <!--main content end-->
@@ -332,7 +275,7 @@
       <footer class="site-footer">
           <div class="text-center">
               2014 - Alvarez.is
-              <a href="morris.html#" class="go-top">
+              <a href="blank.html#" class="go-top">
                   <i class="fa fa-angle-up"></i>
               </a>
           </div>
@@ -343,18 +286,17 @@
     <!-- js placed at the end of the document so the pages load faster -->
     <script src="assets/js/jquery.js"></script>
     <script src="assets/js/bootstrap.min.js"></script>
+    <script src="assets/js/jquery-ui-1.9.2.custom.min.js"></script>
+    <script src="assets/js/jquery.ui.touch-punch.min.js"></script>
     <script class="include" type="text/javascript" src="assets/js/jquery.dcjqaccordion.2.7.js"></script>
     <script src="assets/js/jquery.scrollTo.min.js"></script>
     <script src="assets/js/jquery.nicescroll.js" type="text/javascript"></script>
 
 
     <!--common script for all pages-->
-	<script src="http://cdnjs.cloudflare.com/ajax/libs/raphael/2.1.0/raphael-min.js"></script>
-	<script src="http://cdn.oesmith.co.uk/morris-0.4.3.min.js"></script>
     <script src="assets/js/common-scripts.js"></script>
 
     <!--script for this page-->
-    <script src="assets/js/morris-conf.js"></script>
     
   <script>
       //custom select box

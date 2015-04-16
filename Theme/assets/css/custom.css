@@ -1,0 +1,73 @@
+.black-bg {
+	background: #F7A556;
+	border-bottom: 1px solid #F7A556;
+}
+
+ul.sidebar-menu li a.active, ul.sidebar-menu li a:hover, ul.sidebar-menu li a:focus {
+	background: #29A6DD;
+}
+
+.bg-theme {
+	background-color: #29A6DD;
+}
+
+ul.top-menu > li > .logout {
+	background: #29A6DD;
+	border: 1px solid #29A6DD;
+}
+
+.ds a {
+	color: #29A6DD;
+}
+
+element.style {
+	background-color: rgb(41, 166, 221);
+}
+
+.site-footer {
+	background: #29A6DD;
+}
+
+.green-panel {
+	background: #29A6DD;
+}
+
+.calendar-month-header {
+	background: #29A6DD;
+}
+
+.ds h3 {
+	background: #E23D3D;
+}
+
+.col-lg-3 {
+	height: 780px;
+}
+
+.wrapper {
+	padding-bottom: 0;
+}
+
+.custom-bar-chart .bar .value{
+	background: #F55D5D;
+}
+
+.form-control {
+	margin-bottom: 15px;
+}
+
+.btn-primary {
+	background-color: #29A6DD;
+	border-color: #29A6DD;
+	margin-right: auto;
+	margin-left: auto;
+}
+
+.btn-primary:hover {
+	background-color: #1A88B8;
+	border-color: #1A88B8;
+}
+
+.form-horizontal.style-form .form-group {
+	border-bottom: none;
+}
