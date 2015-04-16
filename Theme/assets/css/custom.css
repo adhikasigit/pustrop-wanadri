@@ -1,3 +1,7 @@
+.site-min-height {
+	min-height: 630px;
+}
+
 .black-bg {
 	background: #F7A556;
 	border-bottom: 1px solid #F7A556;
@@ -59,8 +63,10 @@ element.style {
 .btn-primary {
 	background-color: #29A6DD;
 	border-color: #29A6DD;
-	margin-right: auto;
-	margin-left: auto;
+	text-align: center;
+	margin-left: 45%;
+	margin-top: 20px;
+	margin-bottom: 20px;
 }
 
 .btn-primary:hover {
@@ -70,4 +76,12 @@ element.style {
 
 .form-horizontal.style-form .form-group {
 	border-bottom: none;
+}
+
+a {
+	color: #29A6DD;
+}
+
+.modal-header {
+	background: #29A6DD;
 }

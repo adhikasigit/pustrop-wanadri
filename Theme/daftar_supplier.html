@@ -38,12 +38,12 @@
                   <div class="fa fa-bars tooltips" data-placement="right" data-original-title="Toggle Navigation"></div>
               </div>
             <!--logo start-->
-            <a href="index.html" class="logo"><b>DASHGUM FREE</b></a>
+            <a href="index.html" class="logo"><b>PUSTROP WANADRI</b></a>
             <!--logo end-->
             <div class="top-menu">
-            	<ul class="nav pull-right top-menu">
+              <ul class="nav pull-right top-menu">
                     <li><a class="logout" href="login.html">Logout</a></li>
-            	</ul>
+              </ul>
             </div>
         </header>
       <!--header end-->
@@ -131,21 +131,109 @@
       <!--main content start-->
       <section id="main-content">
           <section class="wrapper site-min-height">
-          	<h3><i class="fa fa-angle-right"></i> Blank Page</h3>
-          	<div class="row mt">
-          		<div class="col-lg-12">
-          		<p>Place your content here.</p>
-          		</div>
-          	</div>
-			
-		</section><! --/wrapper -->
+            <h3><i class="fa fa-angle-right"></i> Daftar Anggota</h3>
+            <div class="row mt">
+              <div class="col-lg-12">
+                <div class="col-md-12 mt">
+                      <div class="content-panel">
+                            <table class="table table-hover">
+                            <h4><i class="fa fa-angle-right"></i> Tabel Daftar Anggota</h4>
+                            <hr>
+                                <thead>
+                                <tr>
+                                    <th></th>
+                                    <th></th>
+                                    <th>Nama Supplier</th>
+                                    <th>Telepon</th>
+                                    <th>Alamat</th>
+                                </tr>
+                                </thead>
+                                <tbody>
+                                <tr>
+                                    <td>
+                                      <input type="checkbox" id="blankCheckox" value="option1">
+                                    </td>
+                                    <td>
+                                      <a href="#" data-toggle="modal" data-target="#editModal" data-whatever="">
+                                        <span class="glyphicon glyphicon-pencil" aria-hidden="true"></span>
+                                      </a>
+                                    </td>
+                                    <td>Tilil</td>
+                                    <td>0811111111</td>
+                                    <td>Tilil 1</td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                      <input type="checkbox" id="blankCheckox" value="option1">
+                                    </td>
+                                    <td>
+                                      <a href="#" data-toggle="modal" data-target="#editModal" data-whatever="">
+                                        <span class="glyphicon glyphicon-pencil" aria-hidden="true"></span>
+                                      </a>
+                                    </td>
+                                    <td>Tilil</td>
+                                    <td>0811111111</td>
+                                    <td>Tilil 1</td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                      <input type="checkbox" id="blankCheckox" value="option1">
+                                    </td>
+                                    <td>
+                                      <a href="#" data-toggle="modal" data-target="#editModal" data-whatever="">
+                                        <span class="glyphicon glyphicon-pencil" aria-hidden="true"></span>
+                                      </a>
+                                    </td>
+                                    <td>Tilil</td>
+                                    <td>0811111111</td>
+                                    <td>Tilil 1</td>
+                                </tr>
+                                </tbody>
+                            </table>
+                            <button type="button" class="btn btn-primary">HAPUS</button>
+                            <div class="modal fade" id="editModal" tabindex="-1" role="dialog" aria-labelledby="editModalLabel" aria-hidden="true">
+                              <div class="modal-dialog">
+                                <div class="modal-content">
+                                    <div class="modal-header">
+                                      <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                                      <h4 class="modal-title" id="editModalLabel">Ubah Supplier</h4>
+                                    </div>
+                                    <div class="modal-body">
+                                      <form>
+                                          <div class="form-group">
+                                            <label for="recipient-name" class="control-label">Nama Supplier:</label>
+                                            <input type="text" class="form-control" id="recipient-name">
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="recipient-name" class="control-label">Telepon:</label>
+                                            <input type="text" class="form-control" id="recipient-name">
+                                          </div>
+                                          <div class="form-group">
+                                            <label for="recipient-name" class="control-label">Alamat:</label>
+                                            <input type="text" class="form-control" id="recipient-name">
+                                          </div>
+                                      </form>
+                                    </div>
+                                  <div class="modal-footer">
+                                    <button type="button" class="btn btn-default" data-dismiss="modal" style="margin-left:0px;">Tutup</button>
+                                    <button type="button" class="btn btn-default">Simpan</button>
+                                  </div>
+                                </div>
+                              </div>
+                          </div>
+                        </div><! --/content-panel -->
+                    </div><!-- /col-md-12 -->
+              </div>
+            </div>
+      
+    </section><! --/wrapper -->
       </section><!-- /MAIN CONTENT -->
 
       <!--main content end-->
       <!--footer start-->
       <footer class="site-footer">
           <div class="text-center">
-              2014 - Alvarez.is
+              2015 - Pustaka Tropis WANADRI
               <a href="blank.html#" class="go-top">
                   <i class="fa fa-angle-up"></i>
               </a>
@@ -177,6 +265,21 @@
       });
 
   </script>
+
+  <!-- Modal -->
+
+    <script>
+    $('#editModal').on('show.bs.modal', function (event) {
+        var button = $(event.relatedTarget) // Button that triggered the modal
+        var recipient = button.data('whatever') // Extract info from data-* attributes
+        // If necessary, you could initiate an AJAX request here (and then do the updating in a callback).
+        // Update the modal's content. We'll use jQuery here, but you could use a data binding library or other methods instead.
+        var modal = $(this)
+        modal.find('.modal-title').text('Ubah Supplier')
+        modal.find('.modal-body input').val()
+    })
+    </script>
+
 
   </body>
 </html>
