@@ -103,3 +103,6 @@ hr {
 	background-color: #1A88B8;
 	border-color: #1A88B8; 
 }
+ul.sidebar-menu li ul.sub li.active a {
+	color: #29A6DD;
+}
