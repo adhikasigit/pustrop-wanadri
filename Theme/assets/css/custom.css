@@ -85,3 +85,21 @@ a {
 .modal-header {
 	background: #29A6DD;
 }
+
+.form-login h2.form-login-heading {
+	background: #29A6DD;
+}
+
+hr {
+	border-top: none;
+}
+
+.btn-theme {
+	background-color: #29A6DD;
+	border-color: #29A6DD;
+}
+
+.btn-theme:hover {
+	background-color: #1A88B8;
+	border-color: #1A88B8; 
+}
