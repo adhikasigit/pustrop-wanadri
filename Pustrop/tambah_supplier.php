@@ -152,7 +152,7 @@
                             <input type="text" class="form-control" name="alamat_supplier">
                         </div>
                         <div>
-                          <input type="submit" value="Submit">
+                          <input type="submit" value="Submit" class="btn btn-primary">
                         </div>
                     </div>
                   </form>

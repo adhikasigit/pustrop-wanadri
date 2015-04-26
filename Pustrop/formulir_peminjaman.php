@@ -151,7 +151,7 @@
                             <input type="text" class="form-control" name="lama_pinjam">
                         </div>
                         <div>
-                          <input type="submit" value="Submit">
+                          <input type="submit" value="Submit" class="btn btn-primary">
                         </div>
                     </div>
                   </form>

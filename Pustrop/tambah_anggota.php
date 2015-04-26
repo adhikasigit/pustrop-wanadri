@@ -156,7 +156,7 @@
                             <input type="text" class="form-control" name="kat_anggota">
                         </div>
                         <div>
-                           <input type="submit" value="Submit">
+                           <input type="submit" value="Submit" class="btn btn-primary">
                         </div>
                     </div>
                   </form>
