@@ -40,7 +40,7 @@
             <!--logo start-->
             <a href="index.html" class="logo"><b>Pustrop WANADRI</b></a>
             <!--logo end-->
-
+            
             <div class="top-menu">
             	<ul class="nav pull-right top-menu">
                     <li><a class="logout" href="login.html">Logout</a></li>
@@ -69,12 +69,12 @@
                   </li>
 
                   <li class="sub-menu">
-                      <a class="active" href="javascript:;" >
+                      <a href="javascript:;" >
                           <i class="fa fa-book"></i>
                           <span>Buku</span>
                       </a>
                       <ul class="sub">
-                          <li class="active"><a  href="tambah_buku.html">Tambah Buku</a></li>
+                          <li><a  href="tambah_buku.html">Tambah Buku</a></li>
                           <li><a  href="katalog_buku.html">Katalog Buku</a></li>
                       </ul>
                   </li>
@@ -89,12 +89,12 @@
                       </ul>
                   </li>
                   <li class="sub-menu">
-                      <a href="javascript:;" >
+                      <a class="active" href="javascript:;" >
                           <i class="fa fa-shopping-cart"></i>
                           <span>Supplier</span>
                       </a>
                       <ul class="sub">
-                          <li><a  href="tambah_supplier.html">Tambah Supplier</a></li>
+                          <li class="active"><a  href="tambah_supplier.html">Tambah Supplier</a></li>
                           <li><a  href="daftar_supplier.html">Daftar Supplier</a></li>
                       </ul>
                   </li>
@@ -121,65 +121,25 @@
       <!--main content start-->
       <section id="main-content">
           <section class="wrapper site-min-height">
-          	<h3><i class="fa fa-angle-right"></i> Tambah Buku</h3>
+          	<h3><i class="fa fa-angle-right"></i> Tambah Supplier</h3>
           	<div class="row mt">
           		<div class="col-lg-12">
           		  <div class="form-panel">
-                  <h4 class="mb"><i class="fa fa-angle-right"></i> Formulir Tambah Buku
+                  <h4 class="mb"><i class="fa fa-angle-right"></i> Formulir Tambah Supplier
                   </h4>
-                  <form action="add_book.php" method="post" >
+                  <form class="form-horizontal style-form" method="post" action="add_supplier.php">
                     <div class="form-group">
-                        <label class="col-sm-2 col-sm-2 control-label">Kode Buku</label>
+                        <label class="col-sm-2 col-sm-2 control-label">Nama Supplier</label>
                         <div class="col-sm-10">
-                            <input type="text" class="form-control" name="idbuku">
+                            <input type="text" class="form-control" name="nama_supplier">
                         </div>
-                        <label class="col-sm-2 col-sm-2 control-label">Judul Buku</label>
+                        <label class="col-sm-2 col-sm-2 control-label">No Telepon</label>
                         <div class="col-sm-10">
-                            <input type="text" class="form-control" name="judul">
+                            <input type="text" class="form-control" name="telf_supplier">
                         </div>
-                        <label class="col-sm-2 col-sm-2 control-label">Kategori Buku</label>
+                        <label class="col-sm-2 col-sm-2 control-label">Alamat</label>
                         <div class="col-sm-10">
-                            <input type="text" class="form-control" name="kategori">
-                        </div>
-                        <label class="col-sm-2 col-sm-2 control-label">Kode Kategori Buku</label>
-                        <div class="col-sm-10">
-                            <input type="text" class="form-control" name="kodekategori">
-                        </div>
-                        <label class="col-sm-2 col-sm-2 control-label">Pengarang</label>
-                        <div class="col-sm-10">
-                            <input type="text" class="form-control" name="pengarang">
-                        </div>
-                        <label class="col-sm-2 col-sm-2 control-label">Penerbit</label>
-                        <div class="col-sm-10">
-                            <input type="text" class="form-control" name="penerbit">
-                        </div>
-                        <label class="col-sm-2 col-sm-2 control-label">Tahun Terbit</label>
-                        <div class="col-sm-10">
-                            <input type="text" class="form-control" name="tahunterbit">
-                        </div>
-                        <label class="col-sm-2 col-sm-2 control-label">Halaman Buku</label>
-                        <div class="col-sm-10">
-                            <input type="text" class="form-control" name="halaman">
-                        </div>
-                        <label class="col-sm-2 col-sm-2 control-label">Harga Beli</label>
-                        <div class="col-sm-10">
-                            <input type="text" class="form-control" name="hargabeli">
-                        </div>
-                        <label class="col-sm-2 col-sm-2 control-label">Harga Jual</label>
-                        <div class="col-sm-10">
-                            <input type="text" class="form-control" name="hargajual">
-                        </div>
-                        <label class="col-sm-2 col-sm-2 control-label">Tanggal Masuk</label>
-                        <div class="col-sm-10">
-                            <input type="text" class="form-control" name="tanggalmasuk">
-                        </div>
-                        <label class="col-sm-2 col-sm-2 control-label">Kode Supplier</label>
-                        <div class="col-sm-10">
-                            <input type="text" class="form-control" name="supplier">
-                        </div>
-                        <label class="col-sm-2 col-sm-2 control-label">Keterangan</label>
-                        <div class="col-sm-10">
-                            <input type="text" class="form-control" name="keterangan">
+                            <input type="text" class="form-control" name="alamat_supplier">
                         </div>
                         <div>
                           <input type="submit" value="Submit">

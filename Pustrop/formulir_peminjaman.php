@@ -138,10 +138,10 @@
                         </div>
                         <label class="col-sm-2 col-sm-2 control-label">Lama Peminjaman</label>
                         <div class="col-sm-10">
-                            <input type="date" class="form-control" name="lama_pinjam">
+                            <input type="text" class="form-control" name="lama_pinjam">
                         </div>
                         <div>
-                          <button type="button" class="btn btn-primary">SIMPAN</button>
+                          <input type="submit" value="Submit">
                         </div>
                     </div>
                   </form>
