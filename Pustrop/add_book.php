@@ -19,8 +19,11 @@
 	//$query = "SELECT id_admin FROM t_admin WHERE nama='".$admin."'";
 	//$result = mysql_query($query);
 	//$id_admin = mysql_result($result,0,"id_admin");
-	$query = "INSERT INTO buku (kode_buku,judul_buku,pengarang_buku,penerbit_buku,tahun_terbit,halaman_buku,harga_jual,keterangan,id_kat_buku) 
-				Values ('".$kode."','".$judul."','".$pengarang."','".$penerbit."','".$tahunterbit."','".$halamanbuku."','".$hargajual."','".$keterangan."','".$kodekat."')";
-	mysql_query($query);
+	$query1 = "INSERT INTO buku (kode_buku,judul_buku,pengarang_buku,penerbit_buku,tahun_terbit,halaman_buku,harga_jual,keterangan,id_kat_buku) 
+				VALUES ('".$kode."','".$judul."','".$pengarang."','".$penerbit."','".$tahunterbit."','".$halamanbuku."','".$hargajual."','".$keterangan."','".$kodekat."')";
+	mysql_query($query1);
+	$query2 = "INSERT INTO inventarisasi_buku (id_buku,tanggal_masuk,id_supplier,harga_beli,kode_buku) 
+				VALUES ('"idbuku"',NOW(),'".$supplier."','"hargabeli"','".$kode."')";
+	mysql_query($query2);
 	header("Location: tambah_buku.php");
 ?>
