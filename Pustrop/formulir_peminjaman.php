@@ -73,7 +73,7 @@
                           <span>Buku</span>
                       </a>
                       <ul class="sub">
-                          <li><a  href="tambah_buku.html">Tambah Buku</a></li>
+                          <li><a  href="tambah_buku.php">Tambah Buku</a></li>
                           <li><a  href="katalog_buku.html">Katalog Buku</a></li>
                       </ul>
                   </li>
@@ -83,7 +83,7 @@
                           <span>Keanggotaan</span>
                       </a>
                       <ul class="sub">
-                          <li><a  href="tambah_anggota.html">Tambah Anggota</a></li>
+                          <li><a  href="tambah_anggota.php">Tambah Anggota</a></li>
                           <li><a  href="daftar_anggota.html">Daftar Anggota</a></li>
                       </ul>
                   </li>
@@ -93,7 +93,7 @@
                           <span>Supplier</span>
                       </a>
                       <ul class="sub">
-                          <li><a  href="tambah_supplier.html">Tambah Supplier</a></li>
+                          <li><a  href="tambah_supplier.php">Tambah Supplier</a></li>
                           <li><a  href="daftar_supplier.html">Daftar Supplier</a></li>
                       </ul>
                   </li>
@@ -103,7 +103,7 @@
                           <span>Peminjaman</span>
                       </a>
                       <ul class="sub">
-                          <li class="active"><a  href="formulir_peminjaman.html">Formulir Peminjaman</a></li>
+                          <li class="active"><a  href="formulir_peminjaman.php">Formulir Peminjaman</a></li>
                           <li><a  href="formulir_pengembalian.html">Formulir Pengembalian</a></li>
                           <li><a  href="daftar_peminjaman.html">Daftar Peminjaman</a></li>
                       </ul>
