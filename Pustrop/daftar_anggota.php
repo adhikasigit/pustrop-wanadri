@@ -159,6 +159,15 @@
                                 </thead>
                                 <tbody>
                                 <tr>
+                                  <?php 
+                                  for($i=0 ; $i<$jumanggota ; $i++){
+                                    $id = mysql_result($result,$i,"id_anggota");
+                                    $nama = mysql_result($result,$i,"nama_anggota");
+                                    $telefon = mysql_result($result,$i,"telefon_anggota");
+                                    $alamat = mysql_result($result,$i,"alamat_anggota");
+                                    $tanggal = mysql_result($result,$i,"tanggal_daftar");
+                                    $idkategori = mysql_result($result,$i,"id_kat_ang");
+                                  ?>
                                     <td>
                                       <input type="checkbox" id="blankCheckox" value="option1">
                                     </td>
@@ -167,42 +176,15 @@
                                         <span class="glyphicon glyphicon-pencil" aria-hidden="true"></span>
                                       </a>
                                     </td>
-                                    <td>Sigit</td>
-                                    <td>0811111111</td>
-                                    <td>Pontek 1</td>
-                                    <td>01-01-2015</td>
-                                    <td>Biasa</td>
-                                </tr>
-                                <tr>
-                                    <td>
-                                      <input type="checkbox" id="blankCheckox" value="option1">
-                                    </td>
-                                    <td>
-                                      <a href="#" data-toggle="modal" data-target="#editModal" data-whatever="">
-                                        <span class="glyphicon glyphicon-pencil" aria-hidden="true"></span>
-                                      </a>
-                                    </td>
-                                    <td>Sigit</td>
-                                    <td>0811111111</td>
-                                    <td>Pontek 1</td>
-                                    <td>01-01-2015</td>
-                                    <td>Biasa</td>
-                                </tr>
-                                <tr>
-                                    <td>
-                                      <input type="checkbox" id="blankCheckox" value="option1">
-                                    </td>
-                                    <td>
-                                      <a href="#" data-toggle="modal" data-target="#editModal" data-whatever="">
-                                        <span class="glyphicon glyphicon-pencil" aria-hidden="true"></span>
-                                      </a>
-                                    </td>
-                                    <td>Sigit</td>
-                                    <td>0811111111</td>
-                                    <td>Pontek 1</td>
-                                    <td>01-01-2015</td>
-                                    <td>Biasa</td>
-                                </tr>
+                                    <?php
+                                      echo '<td>'.$nama.'</td>';
+                                      echo '<td>'.$telefon.'</td>';
+                                      echo '<td>'.$alamat.'</td>';
+                                      echo '<td>'.$tanggal.'</td>';
+                                      echo '<td>'.$idkategori.'</td>';
+                                      echo '</tr>';
+                                    }
+                                    ?>
                                 </tbody>
                             </table>
                             <button type="button" class="btn btn-primary">HAPUS</button>
