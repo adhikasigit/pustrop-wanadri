@@ -85,7 +85,7 @@
                       </a>
                       <ul class="sub">
                           <li><a  href="tambah_anggota.php">Tambah Anggota</a></li>
-                          <li><a  href="daftar_anggota.html">Daftar Anggota</a></li>
+                          <li><a  href="daftar_anggota.php">Daftar Anggota</a></li>
                       </ul>
                   </li>
                   <li class="sub-menu">
@@ -95,7 +95,7 @@
                       </a>
                       <ul class="sub">
                           <li class="active"><a  href="tambah_supplier.php">Tambah Supplier</a></li>
-                          <li><a  href="daftar_supplier.html">Daftar Supplier</a></li>
+                          <li><a  href="daftar_supplier.php">Daftar Supplier</a></li>
                       </ul>
                   </li>
                   <li class="sub-menu">

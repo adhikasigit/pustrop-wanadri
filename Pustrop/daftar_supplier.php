@@ -1,5 +1,12 @@
 <!DOCTYPE html>
 <html lang="en">
+<?php 
+  mysql_connect("localhost","root","");
+  @mysql_select_db("pustrop_si") or die( "Unable to select database");
+  $query = "SELECT * FROM supplier";
+  $result = mysql_query($query);
+  $jumsupplier = mysql_numrows($result);
+?>
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -88,13 +95,13 @@
                       </ul>
                   </li>
                   <li class="sub-menu">
-                      <a href="javascript:;" >
+                      <a class="active" href="javascript:;" >
                           <i class="fa fa-shopping-cart"></i>
                           <span>Supplier</span>
                       </a>
                       <ul class="sub">
                           <li><a  href="tambah_supplier.php">Tambah Supplier</a></li>
-                          <li><a  href="daftar_supplier.php">Daftar Supplier</a></li>
+                          <li class="active"><a  href="daftar_supplier.php">Daftar Supplier</a></li>
                       </ul>
                   </li>
                   <li class="sub-menu">
@@ -109,13 +116,13 @@
                       </ul>
                   </li>
                   <li class="sub-menu">
-                      <a class="active" href="javascript:;" >
+                      <a href="javascript:;" >
                           <i class="fa fa-usd"></i>
                           <span>Penjualan</span>
                       </a>
                       <ul class="sub">
                           <li><a  href="formulir_penjualan.html">Formulir Penjualan</a></li>
-                          <li class="active"><a  href="daftar_penjualan.html">Daftar Penjualan</a></li>
+                          <li><a  href="daftar_penjualan.html">Daftar Penjualan</a></li>
                       </ul>
                   </li>
               </ul>
@@ -130,20 +137,29 @@
       <!--main content start-->
       <section id="main-content">
           <section class="wrapper site-min-height">
-            <h3><i class="fa fa-angle-right"></i> Daftar Penjualan</h3>
+            <h3><i class="fa fa-angle-right"></i> Daftar Anggota</h3>
             <div class="row mt">
               <div class="col-lg-12">
                 <div class="col-md-12 mt">
                       <div class="content-panel">
                             <table class="table table-hover">
-                            <h4><i class="fa fa-angle-right"></i> Tabel Daftar Penjualan</h4>
+                            <h4><i class="fa fa-angle-right"></i> Tabel Daftar Anggota</h4>
                             <hr>
                                 <thead>
                                 <tr>
+                                <?php 
+                                for($i=0 ; $i<$jumsupplier ; $i++){
+                                  $id = mysql_result($result,$i,"id_supplier");
+                                  $nama = mysql_result($result,$i,"nama_supplier");
+                                  $telefon = mysql_result($result,$i,"telefon_supplier");
+                                  $alamat = mysql_result($result,$i,"alamat_supplier");
+                                ?>
                                     <th></th>
-                                    <th>Kode Barang</th>
-                                    <th>Tanggal Jual</th>
-                                    <th>No Anggota</th>
+                                    <th></th>
+                                    <th>Id Supplier</th>
+                                    <th>Nama Supplier</th>
+                                    <th>Telepon</th>
+                                    <th>Alamat</th>
                                 </tr>
                                 </thead>
                                 <tbody>
@@ -151,29 +167,52 @@
                                     <td>
                                       <input type="checkbox" id="blankCheckox" value="option1">
                                     </td>
-                                    <td>010203</td>
-                                    <td>10/10/2015</td>
-                                    <td>1234</td>
-                                </tr>
-                                <tr>
                                     <td>
-                                      <input type="checkbox" id="blankCheckox" value="option1">
+                                      <a href="#" data-toggle="modal" data-target="#editModal" data-whatever="">
+                                        <span class="glyphicon glyphicon-pencil" aria-hidden="true"></span>
+                                      </a>
                                     </td>
-                                    <td>010203</td>
-                                    <td>10/10/2015</td>
-                                    <td>1234</td>
-                                </tr>
-                                <tr>
-                                    <td>
-                                      <input type="checkbox" id="blankCheckox" value="option1">
-                                    </td>
-                                    <td>010203</td>
-                                    <td>10/10/2015</td>
-                                    <td>1234</td>
-                                </tr>
+                                    <?php
+                                      echo '<td>'.$id.'</td>';
+                                      echo '<td>'.$nama.'</td>';
+                                      echo '<td>'.$telefon.'</td>';
+                                      echo '<td>'.$alamat.'</td>';
+                                      echo '</tr>';
+                                    }
+                                    ?>
                                 </tbody>
                             </table>
                             <button type="button" class="btn btn-primary">HAPUS</button>
+                            <div class="modal fade" id="editModal" tabindex="-1" role="dialog" aria-labelledby="editModalLabel" aria-hidden="true">
+                              <div class="modal-dialog">
+                                <div class="modal-content">
+                                    <div class="modal-header">
+                                      <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                                      <h4 class="modal-title" id="editModalLabel">Ubah Supplier</h4>
+                                    </div>
+                                    <div class="modal-body">
+                                      <form>
+                                          <div class="form-group">
+                                            <label for="recipient-name" class="control-label">Nama Supplier:</label>
+                                            <input type="text" class="form-control" id="recipient-name">
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="recipient-name" class="control-label">Telepon:</label>
+                                            <input type="text" class="form-control" id="recipient-name">
+                                          </div>
+                                          <div class="form-group">
+                                            <label for="recipient-name" class="control-label">Alamat:</label>
+                                            <input type="text" class="form-control" id="recipient-name">
+                                          </div>
+                                      </form>
+                                    </div>
+                                  <div class="modal-footer">
+                                    <button type="button" class="btn btn-default" data-dismiss="modal" style="margin-left:0px;">Tutup</button>
+                                    <button type="button" class="btn btn-default">Simpan</button>
+                                  </div>
+                                </div>
+                              </div>
+                          </div>
                         </div><! --/content-panel -->
                     </div><!-- /col-md-12 -->
               </div>
@@ -228,7 +267,7 @@
         // If necessary, you could initiate an AJAX request here (and then do the updating in a callback).
         // Update the modal's content. We'll use jQuery here, but you could use a data binding library or other methods instead.
         var modal = $(this)
-        modal.find('.modal-title').text('Ubah Anggota')
+        modal.find('.modal-title').text('Ubah Supplier')
         modal.find('.modal-body input').val()
     })
     </script>
