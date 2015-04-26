@@ -108,6 +108,16 @@
                           <li><a  href="daftar_peminjaman.html">Daftar Peminjaman</a></li>
                       </ul>
                   </li>
+                  <li class="sub-menu">
+                      <a href="javascript:;" >
+                          <i class="fa fa-usd"></i>
+                          <span>Penjualan</span>
+                      </a>
+                      <ul class="sub">
+                          <li><a  href="formulir_penjualan.html">Formulir Penjualan</a></li>
+                          <li><a  href="daftar_penjualan.html">Daftar Penjualan</a></li>
+                      </ul>
+                  </li>
               </ul>
               <!-- sidebar menu end-->
           </div>
