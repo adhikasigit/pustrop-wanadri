@@ -1,12 +1,5 @@
 <!DOCTYPE html>
 <html lang="en">
-<?php 
-  mysql_connect("localhost","root","");
-  @mysql_select_db("pustrop_si") or die( "Unable to select database");
-  $query = "SELECT * FROM supplier";
-  $result = mysql_query($query);
-  $jumsupplier = mysql_numrows($result);
-?>
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -48,9 +41,9 @@
             <a href="index.html" class="logo"><b>PUSTROP WANADRI</b></a>
             <!--logo end-->
             <div class="top-menu">
-              <ul class="nav pull-right top-menu">
+            	<ul class="nav pull-right top-menu">
                     <li><a class="logout" href="login.html">Logout</a></li>
-              </ul>
+            	</ul>
             </div>
         </header>
       <!--header end-->
@@ -95,23 +88,23 @@
                       </ul>
                   </li>
                   <li class="sub-menu">
-                      <a class="active" href="javascript:;" >
+                      <a href="javascript:;" >
                           <i class="fa fa-shopping-cart"></i>
                           <span>Supplier</span>
                       </a>
                       <ul class="sub">
                           <li><a  href="tambah_supplier.php">Tambah Supplier</a></li>
-                          <li class="active"><a  href="daftar_supplier.php">Daftar Supplier</a></li>
+                          <li><a  href="daftar_supplier.php">Daftar Supplier</a></li>
                       </ul>
                   </li>
                   <li class="sub-menu">
-                      <a href="javascript:;" >
+                      <a class="active" href="javascript:;" >
                           <i class="fa fa-list-alt"></i>
                           <span>Peminjaman</span>
                       </a>
                       <ul class="sub">
                           <li><a  href="formulir_peminjaman.php">Formulir Peminjaman</a></li>
-                          <li><a  href="formulir_pengembalian.html">Formulir Pengembalian</a></li>
+                          <li class="active"><a  href="formulir_pengembalian.html">Formulir Pengembalian</a></li>
                           <li><a  href="daftar_peminjaman.html">Daftar Peminjaman</a></li>
                       </ul>
                   </li>
@@ -137,89 +130,28 @@
       <!--main content start-->
       <section id="main-content">
           <section class="wrapper site-min-height">
-            <h3><i class="fa fa-angle-right"></i> Daftar Anggota</h3>
-            <div class="row mt">
-              <div class="col-lg-12">
-                <div class="col-md-12 mt">
-                      <div class="content-panel">
-                            <table class="table table-hover">
-                            <h4><i class="fa fa-angle-right"></i> Tabel Daftar Anggota</h4>
-                            <hr>
-                                <thead>
-                                <tr>
-                                <?php 
-                                for($i=0 ; $i<$jumpeminjaman ; $i++){
-                                  $id = mysql_result($result,$i,"id_supplier");
-                                  $nama = mysql_result($result,$i,"nama_supplier");
-                                  $telefon = mysql_result($result,$i,"telefon_supplier");
-                                  $alamat = mysql_result($result,$i,"alamat_supplier");
-                                ?>
-                                    <th></th>
-                                    <th></th>
-                                    <th>Id Supplier</th>
-                                    <th>Nama Supplier</th>
-                                    <th>Telepon</th>
-                                    <th>Alamat</th>
-                                </tr>
-                                </thead>
-                                <tbody>
-                                <tr>
-                                    <td>
-                                      <input type="checkbox" id="blankCheckox" value="option1">
-                                    </td>
-                                    <td>
-                                      <a href="#" data-toggle="modal" data-target="#editModal" data-whatever="">
-                                        <span class="glyphicon glyphicon-pencil" aria-hidden="true"></span>
-                                      </a>
-                                    </td>
-                                    <?php
-                                      echo '<td>'.$id.'</td>';
-                                      echo '<td>'.$nama.'</td>';
-                                      echo '<td>'.$telefon.'</td>';
-                                      echo '<td>'.$alamat.'</td>';
-                                      echo '</tr>';
-                                    }
-                                    ?>
-                                  </tr>
-                                </tbody>
-                            </table>
-                            <button type="button" class="btn btn-primary">HAPUS</button>
-                            <div class="modal fade" id="editModal" tabindex="-1" role="dialog" aria-labelledby="editModalLabel" aria-hidden="true">
-                              <div class="modal-dialog">
-                                <div class="modal-content">
-                                    <div class="modal-header">
-                                      <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-                                      <h4 class="modal-title" id="editModalLabel">Ubah Supplier</h4>
-                                    </div>
-                                    <div class="modal-body">
-                                      <form>
-                                          <div class="form-group">
-                                            <label for="recipient-name" class="control-label">Nama Supplier:</label>
-                                            <input type="text" class="form-control" id="recipient-name">
-                                        </div>
-                                        <div class="form-group">
-                                            <label for="recipient-name" class="control-label">Telepon:</label>
-                                            <input type="text" class="form-control" id="recipient-name">
-                                          </div>
-                                          <div class="form-group">
-                                            <label for="recipient-name" class="control-label">Alamat:</label>
-                                            <input type="text" class="form-control" id="recipient-name">
-                                          </div>
-                                      </form>
-                                    </div>
-                                  <div class="modal-footer">
-                                    <button type="button" class="btn btn-default" data-dismiss="modal" style="margin-left:0px;">Tutup</button>
-                                    <button type="button" class="btn btn-default">Simpan</button>
-                                  </div>
-                                </div>
-                              </div>
-                          </div>
-                        </div><! --/content-panel -->
-                    </div><!-- /col-md-12 -->
-              </div>
-            </div>
-      
-    </section><! --/wrapper -->
+          	<h3><i class="fa fa-angle-right"></i> Formulir Pengembalian</h3>
+          	<div class="row mt">
+          		<div class="col-lg-12">
+          		  <div class="form-panel">
+                  <h4 class="mb"><i class="fa fa-angle-right"></i> Isi Formulir Pengembalian
+                  </h4>
+                  <form class="form-horizontal style-form" method="post" action="add_return.php" >
+                    <div class="form-group">
+                        <label class="col-sm-2 col-sm-2 control-label">No Peminjaman</label>
+                        <div class="col-sm-10">
+                            <input type="text" class="form-control" name = "no_pinjam">
+                        </div>
+                        <div>
+                          <input type="submit" value="Submit" class="btn btn-primary">
+                        </div>
+                    </div>
+                  </form>
+                </div>
+          		</div>
+          	</div>
+			
+		</section><! --/wrapper -->
       </section><!-- /MAIN CONTENT -->
 
       <!--main content end-->
@@ -258,21 +190,6 @@
       });
 
   </script>
-
-  <!-- Modal -->
-
-    <script>
-    $('#editModal').on('show.bs.modal', function (event) {
-        var button = $(event.relatedTarget) // Button that triggered the modal
-        var recipient = button.data('whatever') // Extract info from data-* attributes
-        // If necessary, you could initiate an AJAX request here (and then do the updating in a callback).
-        // Update the modal's content. We'll use jQuery here, but you could use a data binding library or other methods instead.
-        var modal = $(this)
-        modal.find('.modal-title').text('Ubah Supplier')
-        modal.find('.modal-body input').val()
-    })
-    </script>
-
 
   </body>
 </html>
