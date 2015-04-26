@@ -146,9 +146,9 @@
                         <div class="col-sm-10">
                             <input type="text" class="form-control" name="kode_buku">
                         </div>
-                        <label class="col-sm-2 col-sm-2 control-label">Lama Peminjaman</label>
+                        <label class="col-sm-2 col-sm-2 control-label">Tanggal Pengembalian</label>
                         <div class="col-sm-10">
-                            <input type="text" class="form-control" name="lama_pinjam">
+                            <input type="date" class="form-control" name="tanggal_pinjam">
                         </div>
                         <div>
                           <input type="submit" value="Submit" class="btn btn-primary">
