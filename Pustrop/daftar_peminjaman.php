@@ -139,6 +139,7 @@
           <section class="wrapper site-min-height">
             <h3><i class="fa fa-angle-right"></i> Daftar Peminjaman</h3>
             <div class="row mt">
+            <form method="post" action="del_peminjaman.php">
               <div class="col-lg-12">
                 <div class="col-md-12 mt">
                       <div class="content-panel">
@@ -150,42 +151,52 @@
                                 
                                     <th></th>
                                     <th>No Peminjaman</th>
-                                    <th>Nama Peminjam</th>
-                                    <th>Kode Buku</th>
+                                    <th>Id Buku</th>
                                     <th>Tanggal Pinjam</th>
                                     <th>Tanggal Harus Kembali</th>
                                     <th>Tanggal Kembali</th>
                                     <th>Denda</th>
+                                    <th>Id Peminjam</th>
+                                    <th>Kembali</th>
                                     <?php 
                                 for($i=0 ; $i<$jumpeminjaman ; $i++){
                                   $id = mysql_result($result,$i,"id_peminjaman");
-                                  $nama = mysql_result($result,$i,"id_buku");
-                                  $telefon = mysql_result($result,$i,"tanggal_kembali_harus");
-                                  $alamat = mysql_result($result,$i,"tanggal_kembali_real");
+                                  $idbuku = mysql_result($result,$i,"id_buku");
+                                  $tanggalpinjam = mysql_result($result,$i,"tanggal_pinjam");
+                                  $tanggalharus = mysql_result($result,$i,"tanggal_kembali_harus");
+                                  $tanggalkembali = mysql_result($result,$i,"tanggal_kembali_real");
+                                  $denda = mysql_result($result,$i,"denda");
                                   $id_peminjam = mysql_result($result,$i,"id_peminjam");
+                                  $kembali = mysql_result($result,$i,"kembali");
                                 ?>
                                 </tr>
                                 </thead>
                                 <tbody>
                                 <tr>
                                     <td>
-                                      <input type="checkbox" id="blankCheckox" value="option1">
+                                      <input type="checkbox" id="check<?php echo $i; ?>" name="check<?php echo $i; ?>" value="<?php echo $id; ?>">
                                     </td>
                                     <?php
                                       echo '<td>'.$id.'</td>';
-                                      echo '<td>'.$nama.'</td>';
-                                      echo '<td>'.$telefon.'</td>';
-                                      echo '<td>'.$alamat.'</td>';
+                                      echo '<td>'.$idbuku.'</td>';
+                                      echo '<td>'.$tanggalpinjam.'</td>';
+                                      echo '<td>'.$tanggalharus.'</td>';
+                                      echo '<td>'.$tanggalkembali.'</td>';
+                                      echo '<td>'.$denda.'</td>';
+                                      echo '<td>'.$id_peminjam.'</td>';
+                                      echo '<td>'.$kembali.'</td>';
                                       echo '</tr>';
                                     }
                                     ?>
                                 </tr>
                                 </tbody>
                             </table>
-                            <button type="button" class="btn btn-primary">HAPUS</button>
+                            <input type="hidden" id="sum" name="sum" value="<?php echo $jumpeminjaman; ?>">
+                            <input type="submit" value="HAPUS" class="btn btn-primary">
                         </div><! --/content-panel -->
                     </div><!-- /col-md-12 -->
               </div>
+              </form>
             </div>
       
     </section><! --/wrapper -->
