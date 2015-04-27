@@ -139,6 +139,7 @@
           <section class="wrapper site-min-height">
             <h3><i class="fa fa-angle-right"></i> Daftar Supplier</h3>
             <div class="row mt">
+            <form method="post" action="del_supplier.php">
               <div class="col-lg-12">
                 <div class="col-md-12 mt">
                       <div class="content-panel">
@@ -165,7 +166,7 @@
                                   $alamat = mysql_result($result,$i,"alamat_supplier");
                                 ?>
                                     <td>
-                                      <input type="checkbox" id="blankCheckox" value="option1">
+                                      <input type="checkbox" id="check<?php echo $i; ?>" name="check<?php echo $i; ?>" value="<?php echo $id; ?>">
                                     </td>
                                     <td>
                                       <a href="#" data-toggle="modal" data-target="#editModal" data-whatever="">
@@ -182,7 +183,8 @@
                                     ?>
                                 </tbody>
                             </table>
-                            <button type="button" class="btn btn-primary">HAPUS</button>
+                            <input type="hidden" id="sum" name="sum" value="<?php echo $jumsupplier; ?>">
+                            <input type="submit" value="HAPUS" class="btn btn-primary">
                             <div class="modal fade" id="editModal" tabindex="-1" role="dialog" aria-labelledby="editModalLabel" aria-hidden="true">
                               <div class="modal-dialog">
                                 <div class="modal-content">

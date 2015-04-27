@@ -193,8 +193,6 @@
                           
                               <input type="hidden" id="sum" name="sum" value="<?php echo $jumanggota; ?>">
                               <input type="submit" value="HAPUS" class="btn btn-primary">
-                          
-                            <!-- <button type="button" class="btn btn-primary">HAPUS</button> -->
                             <div class="modal fade" id="editModal" tabindex="-1" role="dialog" aria-labelledby="editModalLabel" aria-hidden="true">
                               <div class="modal-dialog">
                                 <div class="modal-content">
