@@ -11,11 +11,11 @@
 
 
 	$query1 = "UPDATE peminjaman
-				SET tanggal_kembali_real = NOW(), kembali = 1
+				SET tanggal_kembali_real = NOW(), kembali = true;
 					WHERE id_peminjaman = ".$id."";
 	mysql_query($query);
 
-	$query = "UPDATE buku
+	$query2 = "UPDATE buku
 				SET jumlah_eksemplar = jumlah_eksemplar+1
 					WHERE kode_buku = (SELECT id_buku FROM peminjaman WHERE id_peminjaman = ".$id.")"
 
