@@ -122,7 +122,7 @@
                       </a>
                       <ul class="sub">
                           <li><a  href="formulir_penjualan.php">Formulir Penjualan</a></li>
-                          <li><a  href="daftar_penjualan.html">Daftar Penjualan</a></li>
+                          <li><a  href="daftar_penjualan.php">Daftar Penjualan</a></li>
                       </ul>
                   </li>
               </ul>
@@ -137,13 +137,13 @@
       <!--main content start-->
       <section id="main-content">
           <section class="wrapper site-min-height">
-            <h3><i class="fa fa-angle-right"></i> Daftar Anggota</h3>
+            <h3><i class="fa fa-angle-right"></i> Daftar Peminjaman</h3>
             <div class="row mt">
               <div class="col-lg-12">
                 <div class="col-md-12 mt">
                       <div class="content-panel">
                             <table class="table table-hover">
-                            <h4><i class="fa fa-angle-right"></i> Tabel Daftar Anggota</h4>
+                            <h4><i class="fa fa-angle-right"></i> Tabel Daftar Peminjaman</h4>
                             <hr>
                                 <thead>
                                 <tr>

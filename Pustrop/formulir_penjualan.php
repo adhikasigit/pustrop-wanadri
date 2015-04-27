@@ -115,7 +115,7 @@
                       </a>
                       <ul class="sub">
                           <li class="active"><a  href="formulir_penjualan.php">Formulir Penjualan</a></li>
-                          <li><a  href="daftar_penjualan.html">Daftar Penjualan</a></li>
+                          <li><a  href="daftar_penjualan.php">Daftar Penjualan</a></li>
                       </ul>
                   </li>
               </ul>

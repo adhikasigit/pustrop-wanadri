@@ -122,7 +122,7 @@
                       </a>
                       <ul class="sub">
                           <li><a  href="formulir_penjualan.html">Formulir Penjualan</a></li>
-                          <li class="active"><a  href="daftar_penjualan.html">Daftar Penjualan</a></li>
+                          <li class="active"><a  href="daftar_penjualan.php">Daftar Penjualan</a></li>
                       </ul>
                   </li>
               </ul>
@@ -139,6 +139,7 @@
           <section class="wrapper site-min-height">
             <h3><i class="fa fa-angle-right"></i> Daftar Penjualan</h3>
             <div class="row mt">
+            <form method="post" action="del_penjualan.php">
               <div class="col-lg-12">
                 <div class="col-md-12 mt">
                       <div class="content-panel">
@@ -165,7 +166,7 @@
                                 <tbody>
                                 <tr>
                                   <td>
-                                      <input type="checkbox" id="blankCheckox" value="option1">
+                                      <input type="checkbox" id="check<?php echo $i; ?>" name="check<?php echo $i; ?>" value="<?php echo $id; ?>">
                                     </td>
                                     <td>
                                       <a href="#" data-toggle="modal" data-target="#editModal" data-whatever="">
@@ -182,7 +183,8 @@
                                 </tr>
                                 </tbody>
                             </table>
-                            <button type="button" class="btn btn-primary">HAPUS</button>
+                            <input type="hidden" id="sum" name="sum" value="<?php echo $jumpenjualan; ?>">
+                            <input type="submit" value="HAPUS" class="btn btn-primary">
                         </div><! --/content-panel -->
                     </div><!-- /col-md-12 -->
               </div>
