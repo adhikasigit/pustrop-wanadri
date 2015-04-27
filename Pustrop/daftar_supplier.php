@@ -153,13 +153,6 @@
                                     <th>Nama Supplier</th>
                                     <th>Telepon</th>
                                     <th>Alamat</th>
-                                    <?php 
-                                for($i=0 ; $i<$jumsupplier ; $i++){
-                                  $id = mysql_result($result,$i,"id_supplier");
-                                  $nama = mysql_result($result,$i,"nama_supplier");
-                                  $telefon = mysql_result($result,$i,"telefon_supplier");
-                                  $alamat = mysql_result($result,$i,"alamat_supplier");
-                                ?>
                                 </tr>
                                 </thead>
                                 <tbody>
@@ -184,9 +177,9 @@
                                       echo '<td>'.$nama.'</td>';
                                       echo '<td>'.$telefon.'</td>';
                                       echo '<td>'.$alamat.'</td>';
+                                      echo '</tr>';
                                     }
                                     ?>
-                                  </tr>
                                 </tbody>
                             </table>
                             <button type="button" class="btn btn-primary">HAPUS</button>
