@@ -137,29 +137,29 @@
       <!--main content start-->
       <section id="main-content">
           <section class="wrapper site-min-height">
-            <h3><i class="fa fa-angle-right"></i> Daftar Anggota</h3>
+            <h3><i class="fa fa-angle-right"></i> Daftar Supplier</h3>
             <div class="row mt">
               <div class="col-lg-12">
                 <div class="col-md-12 mt">
                       <div class="content-panel">
                             <table class="table table-hover">
-                            <h4><i class="fa fa-angle-right"></i> Tabel Daftar Anggota</h4>
+                            <h4><i class="fa fa-angle-right"></i> Tabel Daftar Supplier</h4>
                             <hr>
                                 <thead>
                                 <tr>
-                                <?php 
-                                for($i=0 ; $i<$jumpeminjaman ; $i++){
-                                  $id = mysql_result($result,$i,"id_supplier");
-                                  $nama = mysql_result($result,$i,"nama_supplier");
-                                  $telefon = mysql_result($result,$i,"telefon_supplier");
-                                  $alamat = mysql_result($result,$i,"alamat_supplier");
-                                ?>
                                     <th></th>
                                     <th></th>
                                     <th>Id Supplier</th>
                                     <th>Nama Supplier</th>
                                     <th>Telepon</th>
                                     <th>Alamat</th>
+                                    <?php 
+                                for($i=0 ; $i<$jumsupplier ; $i++){
+                                  $id = mysql_result($result,$i,"id_supplier");
+                                  $nama = mysql_result($result,$i,"nama_supplier");
+                                  $telefon = mysql_result($result,$i,"telefon_supplier");
+                                  $alamat = mysql_result($result,$i,"alamat_supplier");
+                                ?>
                                 </tr>
                                 </thead>
                                 <tbody>
@@ -177,7 +177,6 @@
                                       echo '<td>'.$nama.'</td>';
                                       echo '<td>'.$telefon.'</td>';
                                       echo '<td>'.$alamat.'</td>';
-                                      echo '</tr>';
                                     }
                                     ?>
                                   </tr>

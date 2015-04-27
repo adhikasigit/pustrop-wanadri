@@ -3,9 +3,9 @@
 <?php 
   mysql_connect("localhost","root","");
   @mysql_select_db("pustrop_si") or die( "Unable to select database");
-  $query = "SELECT * FROM  peminjaman";
+  $query = "SELECT * FROM buku";
   $result = mysql_query($query);
-  $jumpeminjaman = mysql_numrows($result);
+  $jumbuku = mysql_numrows($result);
 ?>
   <head>
     <meta charset="utf-8">
@@ -48,9 +48,9 @@
             <a href="index.html" class="logo"><b>PUSTROP WANADRI</b></a>
             <!--logo end-->
             <div class="top-menu">
-              <ul class="nav pull-right top-menu">
+            	<ul class="nav pull-right top-menu">
                     <li><a class="logout" href="login.html">Logout</a></li>
-              </ul>
+            	</ul>
             </div>
         </header>
       <!--header end-->
@@ -75,13 +75,13 @@
                   </li>
 
                   <li class="sub-menu">
-                      <a href="javascript:;" >
+                      <a class="active" href="javascript:;" >
                           <i class="fa fa-book"></i>
                           <span>Buku</span>
                       </a>
                       <ul class="sub">
                           <li><a  href="tambah_buku.php">Tambah Buku</a></li>
-                          <li><a  href="katalog_buku.html">Katalog Buku</a></li>
+                          <li class="active"><a  href="katalog_buku.html">Katalog Buku</a></li>
                       </ul>
                   </li>
                   <li class="sub-menu">
@@ -105,14 +105,14 @@
                       </ul>
                   </li>
                   <li class="sub-menu">
-                      <a class="active" href="javascript:;" >
+                      <a href="javascript:;" >
                           <i class="fa fa-list-alt"></i>
                           <span>Peminjaman</span>
                       </a>
                       <ul class="sub">
                           <li><a  href="formulir_peminjaman.php">Formulir Peminjaman</a></li>
                           <li><a  href="formulir_pengembalian.html">Formulir Pengembalian</a></li>
-                          <li class="active"><a  href="daftar_peminjaman.html">Daftar Peminjaman</a></li>
+                          <li><a  href="daftar_peminjaman.html">Daftar Peminjaman</a></li>
                       </ul>
                   </li>
                   <li class="sub-menu">
@@ -137,33 +137,40 @@
       <!--main content start-->
       <section id="main-content">
           <section class="wrapper site-min-height">
-            <h3><i class="fa fa-angle-right"></i> Daftar Anggota</h3>
-            <div class="row mt">
-              <div class="col-lg-12">
-                <div class="col-md-12 mt">
+          	<h3><i class="fa fa-angle-right"></i> Katalog Buku</h3>
+          	<div class="row mt">
+          		<div class="col-lg-12">
+          		  <div class="col-md-12 mt">
                       <div class="content-panel">
                             <table class="table table-hover">
-                            <h4><i class="fa fa-angle-right"></i> Tabel Daftar Anggota</h4>
+                            <h4><i class="fa fa-angle-right"></i> Daftar Buku</h4>
                             <hr>
                                 <thead>
                                 <tr>
-                                
+                                  
                                     <th></th>
-                                    <th>No Peminjaman</th>
-                                    <th>Nama Peminjam</th>
-                                    <th>Kode Buku</th>
-                                    <th>Tanggal Pinjam</th>
-                                    <th>Tanggal Harus Kembali</th>
-                                    <th>Tanggal Kembali</th>
-                                    <th>Denda</th>
-                                    <?php 
-                                for($i=0 ; $i<$jumpeminjaman ; $i++){
-                                  $id = mysql_result($result,$i,"id_peminjaman");
-                                  $nama = mysql_result($result,$i,"id_buku");
-                                  $telefon = mysql_result($result,$i,"tanggal_kembali_harus");
-                                  $alamat = mysql_result($result,$i,"tanggal_kembali_real");
-                                  $id_peminjam = mysql_result($result,$i,"id_peminjam");
-                                ?>
+                                    <th></th>
+                                    <th>Kode</th>
+                                    <th>Judul</th>
+                                    <th>Pengarang</th>
+                                    <th>Penerbit</th>
+                                    <th>Tahun Terbit</th>
+                                    <th>Halaman</th>
+                                    <th>Harga</th>
+                                    <th>Kategori</th>
+                                    <th>Jumlah Tersedia</th>
+                                     <?php 
+                                  for($i=0 ; $i<$jumbuku ; $i++){
+                                  $kode = mysql_result($result,$i,"kode_buku");
+                                  $judul= mysql_result($result,$i,"judul_buku");
+                                  $pengarang = mysql_result($result,$i,"pengarang_buku");
+                                  $penerbit = mysql_result($result,$i,"penerbit_buku");
+                                  $tahunterbit = mysql_result($result,$i,"tahun_terbit");
+                                  $halaman = mysql_result($result,$i,"halaman_buku");
+                                  $harga = mysql_result($result,$i,"harga_jual");
+                                  $kategori = mysql_result($result,$i,"id_kat_buku");
+                                  $jumlah = mysql_result($result,$i,"jumlah_eksemplar");
+                                   ?>
                                 </tr>
                                 </thead>
                                 <tbody>
@@ -171,24 +178,87 @@
                                     <td>
                                       <input type="checkbox" id="blankCheckox" value="option1">
                                     </td>
+                                    <td>
+                                      <a href="#" data-toggle="modal" data-target="#editModal" data-whatever="">
+                                        <span class="glyphicon glyphicon-pencil" aria-hidden="true"></span>
+                                      </a>
+                                    </td>
                                     <?php
-                                      echo '<td>'.$id.'</td>';
-                                      echo '<td>'.$nama.'</td>';
-                                      echo '<td>'.$telefon.'</td>';
-                                      echo '<td>'.$alamat.'</td>';
-                                      echo '</tr>';
+                                      echo '<td>'.$kode.'</td>';
+                                      echo '<td>'.$judul.'</td>';
+                                      echo '<td>'.$pengarang.'</td>';
+                                      echo '<td>'.$penerbit.'</td>';
+                                      echo '<td>'.$tahunterbit.'</td>';
+                                      echo '<td>'.$halaman.'</td>';
+                                      echo '<td>'.$harga.'</td>';
+                                      echo '<td>'.$kategori.'</td>';
+                                      echo '<td>'.$jumlah.'</td>';
                                     }
                                     ?>
                                 </tr>
                                 </tbody>
                             </table>
                             <button type="button" class="btn btn-primary">HAPUS</button>
+                            <div class="modal fade" id="editModal" tabindex="-1" role="dialog" aria-labelledby="editModalLabel" aria-hidden="true">
+                              <div class="modal-dialog">
+                                <div class="modal-content">
+                                    <div class="modal-header">
+                                      <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                                      <h4 class="modal-title" id="editModalLabel">Ubah Buku</h4>
+                                    </div>
+                                    <div class="modal-body">
+                                      <form>
+                                          <div class="form-group">
+                                            <label for="recipient-name" class="control-label">Kode Buku:</label>
+                                            <input type="text" class="form-control" id="recipient-name">
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="recipient-name" class="control-label">Judul:</label>
+                                            <input type="text" class="form-control" id="recipient-name">
+                                          </div>
+                                          <div class="form-group">
+                                            <label for="recipient-name" class="control-label">Pengarang:</label>
+                                            <input type="text" class="form-control" id="recipient-name">
+                                          </div>
+                                          <div class="form-group">
+                                            <label for="recipient-name" class="control-label">Penerbit:</label>
+                                            <input type="text" class="form-control" id="recipient-name">
+                                          </div>
+                                          <div class="form-group">
+                                            <label for="recipient-name" class="control-label">Tahun Terbit:</label>
+                                            <input type="text" class="form-control" id="recipient-name">
+                                          </div>
+                                          <div class="form-group">
+                                            <label for="recipient-name" class="control-label">Halaman:</label>
+                                            <input type="number" class="form-control" id="recipient-name">
+                                          </div>
+                                          <div class="form-group">
+                                            <label for="recipient-name" class="control-label">Harga:</label>
+                                            <input type="number" class="form-control" id="recipient-name">
+                                          </div>
+                                          <div class="form-group">
+                                            <label for="recipient-name" class="control-label">Kategori:</label>
+                                            <input type="text" class="form-control" id="recipient-name">
+                                          </div>
+                                          <div class="form-group">
+                                            <label for="recipient-name" class="control-label">Keterangan:</label>
+                                            <input type="text" class="form-control" id="recipient-name">
+                                          </div>
+                                      </form>
+                                    </div>
+                                  <div class="modal-footer">
+                                    <button type="button" class="btn btn-default" data-dismiss="modal" style="margin-left:0px;">Tutup</button>
+                                    <button type="button" class="btn btn-default">Simpan</button>
+                                  </div>
+                                </div>
+                              </div>
+                          </div>
                         </div><! --/content-panel -->
                     </div><!-- /col-md-12 -->
-              </div>
-            </div>
-      
-    </section><! --/wrapper -->
+          		</div>
+          	</div>
+			
+		</section><! --/wrapper -->
       </section><!-- /MAIN CONTENT -->
 
       <!--main content end-->
@@ -227,6 +297,20 @@
       });
 
   </script>
+
+  <!-- Modal -->
+
+    <script>
+    $('#editModal').on('show.bs.modal', function (event) {
+        var button = $(event.relatedTarget) // Button that triggered the modal
+        var recipient = button.data('whatever') // Extract info from data-* attributes
+        // If necessary, you could initiate an AJAX request here (and then do the updating in a callback).
+        // Update the modal's content. We'll use jQuery here, but you could use a data binding library or other methods instead.
+        var modal = $(this)
+        modal.find('.modal-title').text('Ubah Buku')
+        modal.find('.modal-body input').val()
+    })
+    </script>
 
 
   </body>
