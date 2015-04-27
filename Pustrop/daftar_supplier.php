@@ -278,7 +278,5 @@
         modal.find('.modal-body input').val()
     })
     </script>
-
-
   </body>
 </html>

@@ -140,6 +140,7 @@
           <section class="wrapper site-min-height">
             <h3><i class="fa fa-angle-right"></i> Daftar Anggota</h3>
             <div class="row mt">
+            <form method="post" action="del_anggota.php">
               <div class="col-lg-12">
                 <div class="col-md-12 mt">
                       <div class="content-panel">
@@ -150,6 +151,7 @@
                                 <tr>
                                     <th></th>
                                     <th></th>
+                                    <th>Id Anggota</th>
                                     <th>Nama</th>
                                     <th>Telepon</th>
                                     <th>Alamat</th>
@@ -169,7 +171,7 @@
                                     $idkategori = mysql_result($result,$i,"id_kat_ang");
                                   ?>
                                     <td>
-                                      <input type="checkbox" id="blankCheckox" value="option1">
+                                      <input type="checkbox" id="check<?php echo $i; ?>" name="check<?php echo $i; ?>" value="<?php echo $id; ?>">
                                     </td>
                                     <td>
                                       <a href="#" data-toggle="modal" data-target="#editModal" data-whatever="">
@@ -177,6 +179,7 @@
                                       </a>
                                     </td>
                                     <?php
+                                      echo '<td>'.$id.'</td>';
                                       echo '<td>'.$nama.'</td>';
                                       echo '<td>'.$telefon.'</td>';
                                       echo '<td>'.$alamat.'</td>';
@@ -187,7 +190,11 @@
                                     ?>
                                 </tbody>
                             </table>
-                            <button type="button" class="btn btn-primary">HAPUS</button>
+                          
+                              <input type="hidden" id="sum" name="sum" value="<?php echo $jumanggota; ?>">
+                              <input type="submit" value="HAPUS" class="btn btn-primary">
+                          
+                            <!-- <button type="button" class="btn btn-primary">HAPUS</button> -->
                             <div class="modal fade" id="editModal" tabindex="-1" role="dialog" aria-labelledby="editModalLabel" aria-hidden="true">
                               <div class="modal-dialog">
                                 <div class="modal-content">
@@ -229,6 +236,7 @@
                         </div><! --/content-panel -->
                     </div><!-- /col-md-12 -->
               </div>
+              </form>
             </div>
       
     </section><! --/wrapper -->
