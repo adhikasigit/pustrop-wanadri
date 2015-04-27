@@ -11,7 +11,6 @@
 	$query = "INSERT INTO peminjaman (id_peminjam,id_buku,tanggal_pinjam,tanggal_kembali_harus) 
 	VALUES ('".$id."','".$kode."',NOW(), '".$tgl."')";
 	mysql_query($query);
-	echo $query;
-	//header("Location: formulir_peminjaman.php");
+	header("Location: formulir_peminjaman.php");
 
 ?>
