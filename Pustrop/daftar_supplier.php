@@ -81,7 +81,7 @@
                       </a>
                       <ul class="sub">
                           <li><a  href="tambah_buku.php">Tambah Buku</a></li>
-                          <li><a  href="katalog_buku.html">Katalog Buku</a></li>
+                          <li><a  href="katalog_buku.php">Katalog Buku</a></li>
                       </ul>
                   </li>
                   <li class="sub-menu">
@@ -111,8 +111,8 @@
                       </a>
                       <ul class="sub">
                           <li><a  href="formulir_peminjaman.php">Formulir Peminjaman</a></li>
-                          <li><a  href="formulir_pengembalian.html">Formulir Pengembalian</a></li>
-                          <li><a  href="daftar_peminjaman.html">Daftar Peminjaman</a></li>
+                          <li><a  href="formulir_pengembalian.php">Formulir Pengembalian</a></li>
+                          <li><a  href="daftar_peminjaman.php">Daftar Peminjaman</a></li>
                       </ul>
                   </li>
                   <li class="sub-menu">
@@ -121,7 +121,7 @@
                           <span>Penjualan</span>
                       </a>
                       <ul class="sub">
-                          <li><a  href="formulir_penjualan.html">Formulir Penjualan</a></li>
+                          <li><a  href="formulir_penjualan.php">Formulir Penjualan</a></li>
                           <li><a  href="daftar_penjualan.html">Daftar Penjualan</a></li>
                       </ul>
                   </li>
@@ -164,6 +164,13 @@
                                 </thead>
                                 <tbody>
                                 <tr>
+                                <?php 
+                                for($i=0 ; $i<$jumsupplier ; $i++){
+                                  $id = mysql_result($result,$i,"id_supplier");
+                                  $nama = mysql_result($result,$i,"nama_supplier");
+                                  $telefon = mysql_result($result,$i,"telefon_supplier");
+                                  $alamat = mysql_result($result,$i,"alamat_supplier");
+                                ?>
                                     <td>
                                       <input type="checkbox" id="blankCheckox" value="option1">
                                     </td>
