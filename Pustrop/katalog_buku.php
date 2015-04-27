@@ -151,6 +151,7 @@
                                   
                                     <th></th>
                                     <th></th>
+                                    <th>No. Index</th>
                                     <th>Kode</th>
                                     <th>Judul</th>
                                     <th>Pengarang</th>
@@ -163,7 +164,8 @@
                                     <th>Jumlah Tersedia</th>
                                      <?php 
                                   for($i=0 ; $i<$jumbuku ; $i++){
-                                  $id = mysql_result($result,$i,"kode_buku");
+                                  $id = mysql_result($result,$i,"id_katalog");
+                                  $kode = mysql_result($result,$i,"kode_buku");
                                   $judul= mysql_result($result,$i,"judul_buku");
                                   $pengarang = mysql_result($result,$i,"pengarang_buku");
                                   $penerbit = mysql_result($result,$i,"penerbit_buku");
@@ -188,6 +190,7 @@
                                     </td>
                                     <?php
                                       echo '<td>'.$id.'</td>';
+                                      echo '<td>'.$kode.'</td>';
                                       echo '<td>'.$judul.'</td>';
                                       echo '<td>'.$pengarang.'</td>';
                                       echo '<td>'.$penerbit.'</td>';
@@ -204,7 +207,9 @@
                             </table>
                             <input type="hidden" id="sum" name="sum" value="<?php echo $jumbuku; ?>">
                             <input type="submit" value="HAPUS" class="btn btn-primary" onclick="return confirm('apakah anda yakin?');">
-                            <div class="modal fade" id="editModal" tabindex="-1" role="dialog" aria-labelledby="editModalLabel" aria-hidden="true">
+                           <?php
+                           for($i=0;$i)
+                            <div class="modal fade" id="editModal" tabindex="-1" role="dialog" aria-labelledby="editModalLabel" aria-hidden="true" name="<?php echo $?>">
                               <div class="modal-dialog">
                                 <div class="modal-content">
                                     <div class="modal-header">
@@ -212,42 +217,46 @@
                                       <h4 class="modal-title" id="editModalLabel">Ubah Buku</h4>
                                     </div>
                                     <div class="modal-body">
-                                      <form>
+                                      <form method="post" action="edit_buku.php">
                                           <div class="form-group">
                                             <label for="recipient-name" class="control-label">Kode Buku:</label>
-                                            <input type="text" class="form-control" id="recipient-name">
+                                            <input type="text" class="form-control" id="recipient-name" name="e_kode">
                                         </div>
                                         <div class="form-group">
                                             <label for="recipient-name" class="control-label">Judul:</label>
-                                            <input type="text" class="form-control" id="recipient-name">
+                                            <input type="text" class="form-control" id="recipient-name" name="e_judul">
                                           </div>
                                           <div class="form-group">
                                             <label for="recipient-name" class="control-label">Pengarang:</label>
-                                            <input type="text" class="form-control" id="recipient-name">
+                                            <input type="text" class="form-control" id="recipient-name" name="e_pengarang">
                                           </div>
                                           <div class="form-group">
                                             <label for="recipient-name" class="control-label">Penerbit:</label>
-                                            <input type="text" class="form-control" id="recipient-name">
+                                            <input type="text" class="form-control" id="recipient-name" name="e_penerbit">
                                           </div>
                                           <div class="form-group">
                                             <label for="recipient-name" class="control-label">Tahun Terbit:</label>
-                                            <input type="text" class="form-control" id="recipient-name">
+                                            <input type="text" class="form-control" id="recipient-name" name="e_tahunterbit">
                                           </div>
                                           <div class="form-group">
                                             <label for="recipient-name" class="control-label">Halaman:</label>
-                                            <input type="number" class="form-control" id="recipient-name">
+                                            <input type="number" class="form-control" id="recipient-name" name="e_halaman">
                                           </div>
                                           <div class="form-group">
                                             <label for="recipient-name" class="control-label">Harga:</label>
-                                            <input type="number" class="form-control" id="recipient-name">
+                                            <input type="number" class="form-control" id="recipient-name" name="e_harga">
                                           </div>
                                           <div class="form-group">
                                             <label for="recipient-name" class="control-label">Kategori:</label>
-                                            <input type="text" class="form-control" id="recipient-name">
+                                            <input type="text" class="form-control" id="recipient-name" name="e_id_kategori">
                                           </div>
                                           <div class="form-group">
                                             <label for="recipient-name" class="control-label">Keterangan:</label>
-                                            <input type="text" class="form-control" id="recipient-name">
+                                            <input type="text" class="form-control" id="recipient-name" name="e_keterangan">
+                                          </div>
+                                          <div class="form-group">
+                                            <label for="recipient-name" class="control-label">Jumlah:</label>
+                                            <input type="text" class="form-control" id="recipient-name" name="e_jumlah">
                                           </div>
                                       </form>
                                     </div>

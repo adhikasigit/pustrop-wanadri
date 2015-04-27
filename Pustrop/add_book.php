@@ -12,6 +12,7 @@
 	$tanggalmasuk = $_POST['tanggalmasuk'];
 	$supplier = $_POST['supplier'];
 	$jumlah = $_POST['jumlah_buku'];
+	$keterangan = $_POST['keterangan'];
 
 	mysql_connect("localhost","root","");
 	@mysql_select_db("pustrop_si") or die( "Unable to select database");
