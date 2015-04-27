@@ -159,6 +159,7 @@
                                     <th>Harga</th>
                                     <th>Kategori</th>
                                     <th>Jumlah Tersedia</th>
+                                    <th>Keterangan</th>
                                      <?php 
                                   for($i=0 ; $i<$jumbuku ; $i++){
                                   $kode = mysql_result($result,$i,"kode_buku");
@@ -170,6 +171,7 @@
                                   $harga = mysql_result($result,$i,"harga_jual");
                                   $kategori = mysql_result($result,$i,"id_kat_buku");
                                   $jumlah = mysql_result($result,$i,"jumlah_eksemplar");
+                                  $keterangan = mysql_result($result,$i,"keterangan");
                                    ?>
                                 </tr>
                                 </thead>
@@ -193,6 +195,7 @@
                                       echo '<td>'.$harga.'</td>';
                                       echo '<td>'.$kategori.'</td>';
                                       echo '<td>'.$jumlah.'</td>';
+                                      echo '<td>'.$keterangan.'</td>';
                                     }
                                     ?>
                                 </tr>
