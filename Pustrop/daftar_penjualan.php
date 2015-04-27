@@ -149,7 +149,6 @@
                                 <thead>
                                 <tr>
                                     <th></th>
-                                    <th></th>
                                     <th>ID Penjualan</th>
                                     <th>Kode Barang</th>
                                     <th>Tanggal Jual</th>
@@ -167,11 +166,6 @@
                                 <tr>
                                   <td>
                                       <input type="checkbox" id="check<?php echo $i; ?>" name="check<?php echo $i; ?>" value="<?php echo $id; ?>">
-                                    </td>
-                                    <td>
-                                      <a href="#" data-toggle="modal" data-target="#editModal" data-whatever="">
-                                        <span class="glyphicon glyphicon-pencil" aria-hidden="true"></span>
-                                      </a>
                                     </td>
                                <?php
                                       echo '<td>'.$id.'</td>';

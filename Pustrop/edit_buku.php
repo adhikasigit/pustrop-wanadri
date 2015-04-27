@@ -33,5 +33,5 @@
 
 				WHERE id_buku = '".$id."'";
 	mysql_query($query1);
-	header("Location: tambah_buku.php");
+	header("Location: katalog_buku.php");
 ?>

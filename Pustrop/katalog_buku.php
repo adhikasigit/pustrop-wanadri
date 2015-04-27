@@ -162,7 +162,7 @@
                                     <th>Keterangan</th>
                                     <th>Kategori Buku</th>
                                     <th>Jumlah Tersedia</th>
-                                     <?php 
+                                <?php 
                                   for($i=0 ; $i<$jumbuku ; $i++){
                                   $id = mysql_result($result,$i,"id_katalog");
                                   $kode = mysql_result($result,$i,"kode_buku");
@@ -175,7 +175,7 @@
                                   $keterangan = mysql_result($result,$i,"keterangan");
                                   $idkategori = mysql_result($result,$i,"id_kat_buku");
                                   $jumlah = mysql_result($result,$i,"jumlah_eksemplar");
-                                  ?>
+                                ?>
                                 </tr>
                                 </thead>
                                 <tbody>
@@ -207,66 +207,84 @@
                             </table>
                             <input type="hidden" id="sum" name="sum" value="<?php echo $jumbuku; ?>">
                             <input type="submit" value="HAPUS" class="btn btn-primary" onclick="return confirm('apakah anda yakin?');">
-                           <?php
-                           for($i=0;$i)
-                            <div class="modal fade" id="editModal" tabindex="-1" role="dialog" aria-labelledby="editModalLabel" aria-hidden="true" name="<?php echo $?>">
+                           	
+                           	<?php 
+                                for($i=0 ; $i<$jumbuku ; $i++){
+                                  	$id = mysql_result($result,$i,"id_katalog");
+                                  	$kode = mysql_result($result,$i,"kode_buku");
+                                  	$judul= mysql_result($result,$i,"judul_buku");
+                                  	$pengarang = mysql_result($result,$i,"pengarang_buku");
+                                  	$penerbit = mysql_result($result,$i,"penerbit_buku");
+                                  	$tahunterbit = mysql_result($result,$i,"tahun_terbit");
+                                  	$halaman = mysql_result($result,$i,"halaman_buku");
+                                  	$harga = mysql_result($result,$i,"harga_jual");
+                                  	$keterangan = mysql_result($result,$i,"keterangan");
+                                  	$idkategori = mysql_result($result,$i,"id_kat_buku");
+                                  	$jumlah = mysql_result($result,$i,"jumlah_eksemplar");
+                            ?>
+
+                            <div class="modal fade" id="editModal<?php echo $id; ?>" tabindex="-1" role="dialog" aria-labelledby="editModalLabel" aria-hidden="true">
                               <div class="modal-dialog">
+                              <form method="post" onsubmit="return validate(<?php echo $id; ?>);" action="edit_buku.php">
                                 <div class="modal-content">
                                     <div class="modal-header">
                                       <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
                                       <h4 class="modal-title" id="editModalLabel">Ubah Buku</h4>
                                     </div>
                                     <div class="modal-body">
-                                      <form method="post" action="edit_buku.php">
-                                          <div class="form-group">
+                            			<input type="hidden" id="id" name="id" value="<?php echo $id; ?>">
+                                        <div class="form-group">
+                                        <div class="form-group">
                                             <label for="recipient-name" class="control-label">Kode Buku:</label>
-                                            <input type="text" class="form-control" id="recipient-name" name="e_kode">
+                                            <input type="text" class="form-control" id="kode<?php echo $id; ?>" name="kode" value="<?php echo $kode; ?>">
                                         </div>
                                         <div class="form-group">
                                             <label for="recipient-name" class="control-label">Judul:</label>
-                                            <input type="text" class="form-control" id="recipient-name" name="e_judul">
+                                            <input type="text" class="form-control" id="judul<?php echo $id; ?>" name="judul" value="<?php echo $judul; ?>">
                                           </div>
                                           <div class="form-group">
                                             <label for="recipient-name" class="control-label">Pengarang:</label>
-                                            <input type="text" class="form-control" id="recipient-name" name="e_pengarang">
+                                            <input type="text" class="form-control" id="pengarang<?php echo $id; ?>" name="pengarang" value="<?php echo $pengarang; ?>">
                                           </div>
                                           <div class="form-group">
                                             <label for="recipient-name" class="control-label">Penerbit:</label>
-                                            <input type="text" class="form-control" id="recipient-name" name="e_penerbit">
+                                            <input type="text" class="form-control" id="penerbit<?php echo $id; ?>" name="penerbit" value="<?php echo $penerbit; ?>">
                                           </div>
                                           <div class="form-group">
                                             <label for="recipient-name" class="control-label">Tahun Terbit:</label>
-                                            <input type="text" class="form-control" id="recipient-name" name="e_tahunterbit">
+                                            <input type="text" class="form-control" id="tahunterbit<?php echo $id; ?>" name="tahunterbit" value="<?php echo $tahunterbit; ?>">
                                           </div>
                                           <div class="form-group">
                                             <label for="recipient-name" class="control-label">Halaman:</label>
-                                            <input type="number" class="form-control" id="recipient-name" name="e_halaman">
+                                            <input type="number" class="form-control" id="halaman<?php echo $id; ?>" name="halaman" value="<?php echo $halaman; ?>">
                                           </div>
                                           <div class="form-group">
                                             <label for="recipient-name" class="control-label">Harga:</label>
-                                            <input type="number" class="form-control" id="recipient-name" name="e_harga">
+                                            <input type="number" class="form-control" id="harga<?php echo $id; ?>" name="harga" value="<?php echo $harga; ?>">
                                           </div>
                                           <div class="form-group">
                                             <label for="recipient-name" class="control-label">Kategori:</label>
-                                            <input type="text" class="form-control" id="recipient-name" name="e_id_kategori">
+                                            <input type="text" class="form-control" id="idkategori<?php echo $id; ?>" name="idkategori" value="<?php echo $idkategori; ?>">
                                           </div>
                                           <div class="form-group">
                                             <label for="recipient-name" class="control-label">Keterangan:</label>
-                                            <input type="text" class="form-control" id="recipient-name" name="e_keterangan">
+                                            <input type="text" class="form-control" id="keterangan<?php echo $id; ?>" name="keterangan" value="<?php echo $keterangan; ?>">
                                           </div>
                                           <div class="form-group">
                                             <label for="recipient-name" class="control-label">Jumlah:</label>
-                                            <input type="text" class="form-control" id="recipient-name" name="e_jumlah">
+                                            <input type="text" class="form-control" id="jumlah<?php echo $id; ?>" name="jumlah" value="<?php echo $jumlah; ?>">
                                           </div>
                                       </form>
                                     </div>
                                   <div class="modal-footer">
                                     <button type="button" class="btn btn-default" data-dismiss="modal" style="margin-left:0px;">Tutup</button>
-                                    <button type="button" class="btn btn-default">Simpan</button>
+                                    <input type="submit" class="btn btn-default" value="Simpan">
                                   </div>
                                 </div>
+                                </form>
                               </div>
                           </div>
+                          <?php }?>
                         </div><! --/content-panel -->
                     </div><!-- /col-md-12 -->
           		</div>

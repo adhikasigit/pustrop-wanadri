@@ -169,7 +169,7 @@
                                       <input type="checkbox" id="check<?php echo $i; ?>" name="check<?php echo $i; ?>" value="<?php echo $id; ?>">
                                     </td>
                                     <td>
-                                      <a href="#" data-toggle="modal" data-target="#editModal" data-whatever="">
+                                      <a href="#" data-toggle="modal" data-target="#editModal<?php echo $id; ?>" data-whatever="">
                                         <span class="glyphicon glyphicon-pencil" aria-hidden="true"></span>
                                       </a>
                                     </td>
@@ -185,8 +185,16 @@
                             </table>
                             <input type="hidden" id="sum" name="sum" value="<?php echo $jumsupplier; ?>">
                             <input type="submit" value="HAPUS" class="btn btn-primary" onclick="return confirm('apakah anda yakin?');">
-                            <div class="modal fade" id="editModal" tabindex="-1" role="dialog" aria-labelledby="editModalLabel" aria-hidden="true">
+                            <?php 
+                                for($i=0 ; $i<$jumsupplier ; $i++){
+                                  $id = mysql_result($result,$i,"id_supplier");
+                                  $nama = mysql_result($result,$i,"nama_supplier");
+                                  $telefon = mysql_result($result,$i,"telefon_supplier");
+                                  $alamat = mysql_result($result,$i,"alamat_supplier");
+                            ?>
+                            <div class="modal fade" id="editModal<?php echo $id; ?>" tabindex="-1" role="dialog" aria-labelledby="editModalLabel" aria-hidden="true">
                               <div class="modal-dialog">
+                              <form method="post" onsubmit="return validate(<?php echo $id; ?>);" action="edit_supplier.php">
                                 <div class="modal-content">
                                     <div class="modal-header">
                                       <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
@@ -196,25 +204,26 @@
                                       <form>
                                           <div class="form-group">
                                             <label for="recipient-name" class="control-label">Nama Supplier:</label>
-                                            <input type="text" class="form-control" id="recipient-name">
+                                            <input type="text" class="form-control" id="nama<?php echo $id; ?>" name="nama" value="<?php echo $nama; ?>">
                                         </div>
                                         <div class="form-group">
                                             <label for="recipient-name" class="control-label">Telepon:</label>
-                                            <input type="text" class="form-control" id="recipient-name">
+                                            <input type="text" class="form-control" id="telefon<?php echo $id; ?>" name="telefon" value="<?php echo $telefon; ?>">
                                           </div>
                                           <div class="form-group">
                                             <label for="recipient-name" class="control-label">Alamat:</label>
-                                            <input type="text" class="form-control" id="recipient-name">
+                                            <input type="text" class="form-control" id="alamat<?php echo $id; ?>" name="alamat" value="<?php echo $alamat; ?>">
                                           </div>
                                       </form>
                                     </div>
                                   <div class="modal-footer">
                                     <button type="button" class="btn btn-default" data-dismiss="modal" style="margin-left:0px;">Tutup</button>
-                                    <button type="button" class="btn btn-default">Simpan</button>
+                                    <input type="button" class="btn btn-default" value="Simpan">
                                   </div>
                                 </div>
                               </div>
                           </div>
+                          <?php }?>
                         </div><! --/content-panel -->
                     </div><!-- /col-md-12 -->
               </div>
