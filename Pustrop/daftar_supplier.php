@@ -184,7 +184,7 @@
                                 </tbody>
                             </table>
                             <input type="hidden" id="sum" name="sum" value="<?php echo $jumsupplier; ?>">
-                            <input type="submit" value="HAPUS" class="btn btn-primary">
+                            <input type="submit" value="HAPUS" class="btn btn-primary" onclick="return confirm('apakah anda yakin?');">
                             <div class="modal fade" id="editModal" tabindex="-1" role="dialog" aria-labelledby="editModalLabel" aria-hidden="true">
                               <div class="modal-dialog">
                                 <div class="modal-content">

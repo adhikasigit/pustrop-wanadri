@@ -184,7 +184,7 @@
                                 </tbody>
                             </table>
                             <input type="hidden" id="sum" name="sum" value="<?php echo $jumpenjualan; ?>">
-                            <input type="submit" value="HAPUS" class="btn btn-primary">
+                            <input type="submit" value="HAPUS" class="btn btn-primary" onclick="return confirm('apakah anda yakin?');">
                         </div><! --/content-panel -->
                     </div><!-- /col-md-12 -->
               </div>

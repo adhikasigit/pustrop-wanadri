@@ -139,6 +139,7 @@
           <section class="wrapper site-min-height">
           	<h3><i class="fa fa-angle-right"></i> Katalog Buku</h3>
           	<div class="row mt">
+            <form method="post" action="del_buku.php">
           		<div class="col-lg-12">
           		  <div class="col-md-12 mt">
                       <div class="content-panel">
@@ -157,28 +158,28 @@
                                     <th>Tahun Terbit</th>
                                     <th>Halaman</th>
                                     <th>Harga</th>
-                                    <th>Kategori</th>
-                                    <th>Jumlah Tersedia</th>
                                     <th>Keterangan</th>
+                                    <th>Kategori Buku</th>
+                                    <th>Jumlah Tersedia</th>
                                      <?php 
                                   for($i=0 ; $i<$jumbuku ; $i++){
-                                  $kode = mysql_result($result,$i,"kode_buku");
+                                  $id = mysql_result($result,$i,"kode_buku");
                                   $judul= mysql_result($result,$i,"judul_buku");
                                   $pengarang = mysql_result($result,$i,"pengarang_buku");
                                   $penerbit = mysql_result($result,$i,"penerbit_buku");
                                   $tahunterbit = mysql_result($result,$i,"tahun_terbit");
                                   $halaman = mysql_result($result,$i,"halaman_buku");
                                   $harga = mysql_result($result,$i,"harga_jual");
-                                  $kategori = mysql_result($result,$i,"id_kat_buku");
-                                  $jumlah = mysql_result($result,$i,"jumlah_eksemplar");
                                   $keterangan = mysql_result($result,$i,"keterangan");
-                                   ?>
+                                  $idkategori = mysql_result($result,$i,"id_kat_buku");
+                                  $jumlah = mysql_result($result,$i,"jumlah_eksemplar");
+                                  ?>
                                 </tr>
                                 </thead>
                                 <tbody>
                                 <tr>
                                     <td>
-                                      <input type="checkbox" id="blankCheckox" value="option1">
+                                      <input type="checkbox" id="check<?php echo $i; ?>" name="check<?php echo $i; ?>" value="<?php echo $id; ?>">
                                     </td>
                                     <td>
                                       <a href="#" data-toggle="modal" data-target="#editModal" data-whatever="">
@@ -186,22 +187,23 @@
                                       </a>
                                     </td>
                                     <?php
-                                      echo '<td>'.$kode.'</td>';
+                                      echo '<td>'.$id.'</td>';
                                       echo '<td>'.$judul.'</td>';
                                       echo '<td>'.$pengarang.'</td>';
                                       echo '<td>'.$penerbit.'</td>';
                                       echo '<td>'.$tahunterbit.'</td>';
                                       echo '<td>'.$halaman.'</td>';
                                       echo '<td>'.$harga.'</td>';
-                                      echo '<td>'.$kategori.'</td>';
-                                      echo '<td>'.$jumlah.'</td>';
                                       echo '<td>'.$keterangan.'</td>';
+                                      echo '<td>'.$idkategori.'</td>';
+                                      echo '<td>'.$jumlah.'</td>';
                                     }
                                     ?>
                                 </tr>
                                 </tbody>
                             </table>
-                            <button type="button" class="btn btn-primary">HAPUS</button>
+                            <input type="hidden" id="sum" name="sum" value="<?php echo $jumbuku; ?>">
+                            <input type="submit" value="HAPUS" class="btn btn-primary" onclick="return confirm('apakah anda yakin?');">
                             <div class="modal fade" id="editModal" tabindex="-1" role="dialog" aria-labelledby="editModalLabel" aria-hidden="true">
                               <div class="modal-dialog">
                                 <div class="modal-content">
@@ -259,6 +261,7 @@
                         </div><! --/content-panel -->
                     </div><!-- /col-md-12 -->
           		</div>
+              </form>
           	</div>
 			
 		</section><! --/wrapper -->
