@@ -142,10 +142,6 @@
                         <div class="col-sm-10">
                             <input type="text" class="form-control" name="id_jual">
                         </div>
-                        <label class="col-sm-2 col-sm-2 control-label">Tanggal Jual</label>
-                        <div class="col-sm-10">
-                            <input type="date" class="form-control" name="tanggal_jual">
-                        </div>
                         <label class="col-sm-2 col-sm-2 control-label">No Anggota</label>
                         <div class="col-sm-10">
                             <input type="text" class="form-control" name="id_anggota">

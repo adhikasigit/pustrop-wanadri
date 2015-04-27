@@ -191,6 +191,10 @@
                         <div class="col-sm-10">
                             <input type="text" class="form-control" name="keterangan">
                         </div>
+                        <label class="col-sm-2 col-sm-2 control-label">Jumlah Masuk</label>
+                        <div class="col-sm-10">
+                            <input type="text" class="form-control" name="jumlah_masuk">
+                        </div>
                         <div>
                           <input type="submit" value="Submit" class="btn btn-primary">
                         </div>
