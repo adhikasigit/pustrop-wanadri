@@ -148,7 +148,7 @@
                         </div>
                         <label class="col-sm-2 col-sm-2 control-label">Tanggal Pengembalian</label>
                         <div class="col-sm-10">
-                            <input type="date" class="form-control" name="tanggal_pinjam">
+                            <input type="date" class="form-control" name="tgl_pinjam">
                         </div>
                         <div>
                           <input type="submit" value="Submit" class="btn btn-primary">
